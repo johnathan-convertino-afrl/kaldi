@@ -22,6 +22,11 @@ endif()
 
 include(third_party/get_third_party)
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/tools/openfst/include)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/tools/openfst/lib)
+
+find_package(BLAS REQUIRED)
+
 find_package(PythonInterp)
 if(NOT PYTHON_EXECUTABLE)
     message(FATAL_ERROR "Needs python to auto-generate most CMake files, but not found.")
