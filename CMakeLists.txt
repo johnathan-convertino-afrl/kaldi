@@ -39,6 +39,9 @@ execute_process(COMMAND ${PYTHON_EXECUTABLE}
     "--quiet"
     ${IS_LIB_SHARE}
 )
+
+execute_process(COMMAND make -C ${CMAKE_CURRENT_SOURCE_DIR}/tools openfst cub -j${nproc})
+
 unset(IS_LIB_SHARE)
 
 set(CMAKE_CXX_STANDARD 17)
